@@ -14,7 +14,7 @@ import json
 import sys
 import re
 import urllib
-from urllib.request import Request, urlopen
+from urllib import urlopen
 
 
 # Make request to google finance
@@ -22,8 +22,7 @@ def makeRequest(symbol):
   url = 'http://www.google.com/finance/company_news?output=json&q=' \
         + symbol + '&start=0&num=1000'
   try:
-    req = Request(url)
-    resp = urlopen(req)
+    resp = urlopen(url)
     content = resp.read()
 
     content_json = demjson.decode(content)
