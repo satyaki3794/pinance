@@ -14,7 +14,7 @@ import json
 import sys
 import re
 import urllib
-from urllib.request import Request, urlopen
+from urllib import urlopen
 
 # Human readable texts
 mapping = {
@@ -57,8 +57,7 @@ def makeQuotesRequest(symbol):
   url = 'https://finance.google.com/finance/info?client=ig&q=' \
       + symbol
   try:
-    req = Request(url)
-    resp = urlopen(req)
+    resp = urlopen(url)
     content = resp.read().decode('ascii', 'ignore').strip()
     content = json.loads(content[3:])
     return replaceKeys(content);
