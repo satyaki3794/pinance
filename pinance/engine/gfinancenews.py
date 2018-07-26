@@ -30,9 +30,9 @@ def makeRequest(symbol):
     if clusters[0]:
       return clusters[0]["a"]
     return []
-  except urllib.error.URLError as e:
+  except urllib.URLError as e:
     return []
-  except urllib.error.HTTPError as e:
+  except urllib.HTTPError as e:
     return []
 
 
