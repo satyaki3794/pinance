@@ -35,7 +35,7 @@ def make_request(ticker, expiry):
 
   try:
     response = json.loads(urllib.urlopen(url).read().decode('utf-8'))
-  except urllib.error.URLError as e:
+  except urllib.URLError as e:
     if hasattr(e, 'reason'):
       return []
     elif hasattr(e, 'code'):
