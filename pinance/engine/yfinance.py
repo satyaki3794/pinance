@@ -11,7 +11,7 @@ Python module for getting stock data
 
 # Dependencies
 from datetime import datetime, timedelta
-from urllib.request import urlopen
+from urllib import urlopen
 from urllib.parse import urlencode
 from simplejson import loads
 import pytz
