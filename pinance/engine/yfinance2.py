@@ -8,7 +8,7 @@ Python module for getting stock data
 
 """
 
-import urllib, urllib.error, urllib
+import urllib, urllib, urllib
 import time
 from random import randrange
 from datetime import datetime
