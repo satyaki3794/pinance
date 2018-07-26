@@ -61,9 +61,9 @@ def makeQuotesRequest(symbol):
     content = resp.read().decode('ascii', 'ignore').strip()
     content = json.loads(content[3:])
     return replaceKeys(content);
-  except urllib.error.URLError as e:
+  except urllib.URLError as e:
     return []
-  except urllib.error.HTTPError as e:
+  except urllib.HTTPError as e:
     return []
 
 
