@@ -8,7 +8,7 @@ Python module for getting stock data
 
 """
 
-import urllib.request, urllib.error, urllib.parse
+import urllib, urllib.error, urllib.parse
 import time
 from random import randrange
 from datetime import datetime
@@ -34,7 +34,7 @@ def make_request(ticker, expiry):
     url = create_url(ticker, None)
 
   try:
-    response = json.loads(urllib.request.urlopen(url).read().decode('utf-8'))
+    response = json.loads(urllib.urlopen(url).read().decode('utf-8'))
   except urllib.error.URLError as e:
     if hasattr(e, 'reason'):
       return []
